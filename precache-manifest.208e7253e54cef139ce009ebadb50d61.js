@@ -8,15 +8,15 @@ self.__precacheManifest = [
     "url": "/WallPost/static/js/runtime~main.b5f2a57b.js"
   },
   {
-    "revision": "5f943cff921147790812",
-    "url": "/WallPost/static/js/main.7c26e58d.chunk.js"
+    "revision": "4a74b1d1c5fd3496cfa4",
+    "url": "/WallPost/static/js/main.721eb947.chunk.js"
   },
   {
     "revision": "76f3becd4a3235907926",
     "url": "/WallPost/static/js/2.46e6e62e.chunk.js"
   },
   {
-    "revision": "5f943cff921147790812",
+    "revision": "4a74b1d1c5fd3496cfa4",
     "url": "/WallPost/static/css/main.f640144b.chunk.css"
   },
   {
@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/WallPost/static/css/2.e785127d.chunk.css"
   },
   {
-    "revision": "dda1e5e0360a4b3bec02f1ef5b5947fc",
+    "revision": "f32759cb74de28ecd29147b810af73a6",
     "url": "/WallPost/index.html"
   }
 ];
