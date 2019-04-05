@@ -1,29 +1,53 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Panel, ListItem, Button, Group, Div, Avatar, PanelHeader } from '@vkontakte/vkui';
+import { Panel, ListItem, Button, Group, Div, Avatar, PanelHeader, Cell } from '@vkontakte/vkui';
+import Icon24Home from '@vkontakte/icons/dist/24/home';
 
-const Home = ({ id, go, fetchedUser }) => (
-	<Panel id={id}>
-		<PanelHeader>Example</PanelHeader>
-		{fetchedUser &&
-		<Group title="User Data Fetched with VK Connect">
-			<ListItem
-				before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200}/> : null}
-				description={fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : ''}
-			>
-				{`${fetchedUser.first_name} ${fetchedUser.last_name}`}
-			</ListItem>
-		</Group>}
+const getUrl = (id) => {
+	return `https://vk.com/chtitaemknigi?w=wall-140026984_${id}`
+};
 
-		<Group title="Navigation Example">
-			<Div>
-				<Button size="xl" level="2" onClick={go} data-to="persik">
-					Show me the Persik, please
-				</Button>
-			</Div>
-		</Group>
-	</Panel>
-);
+const Home = ({ id, go, fetchedUser, handleClick, text, isShow, postId, isLoading }) => {
+
+	return (
+		<Panel id={id}>
+			<PanelHeader>Читаем вместе</PanelHeader>
+			{fetchedUser &&
+			<Group title="Ответы на вопросы для Вас">
+				<ListItem
+					before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200}/> : null}
+					description={fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : ''}
+				>
+					{`${fetchedUser.first_name} ${fetchedUser.last_name}`}
+				</ListItem>
+                <Cell href="https://vk.com/club140026984" target="_blank" expandable={true}
+                      before={<Icon24Home />}
+                      description="Наша группа ВКонтакте">Читаем вместе</Cell>
+			</Group>}
+
+			<Group>
+				<Div>
+					{/*<Button size="xl" level="2" onClick={go} data-to="persik">*/}
+					{/*Show me the Persik, please*/}
+					{/*</Button>*/}
+
+					<Button size="xl" level="2" onClick={handleClick}>
+						Получить ответ на новый вопрос
+					</Button>
+
+					{/*{isShow &&*/}
+					{/*<Div><Div style={{ color: '#8e8e93', lineHeight: '1.5', }}>{text}</Div></Div>*/}
+					{/*}*/}
+					{/*{isLoading && <div>Loading...</div>}*/}
+				</Div>
+                {!isLoading && isShow &&
+                <Cell href={getUrl(postId)} target="_blank" expandable={true}
+                      description="Ответ на Ваш вопрос готов">Просмотреть ответ на Ваш вопрос</Cell>
+                }
+			</Group>
+		</Panel>
+	)
+};
 
 Home.propTypes = {
 	id: PropTypes.string.isRequired,
