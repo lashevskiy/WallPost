@@ -12,19 +12,19 @@ self.__precacheManifest = [
     "url": "/WallPost/static/js/main.d87d3b78.chunk.js"
   },
   {
-    "revision": "1da3bff33f4cbc327dd2",
-    "url": "/WallPost/static/js/2.d14222f3.chunk.js"
+    "revision": "385fa064b2b6bf9f3fa4",
+    "url": "/WallPost/static/js/2.cee2cabd.chunk.js"
   },
   {
     "revision": "f11bd4dc42067f65f66a",
     "url": "/WallPost/static/css/main.f640144b.chunk.css"
   },
   {
-    "revision": "1da3bff33f4cbc327dd2",
-    "url": "/WallPost/static/css/2.e785127d.chunk.css"
+    "revision": "385fa064b2b6bf9f3fa4",
+    "url": "/WallPost/static/css/2.dea25ce6.chunk.css"
   },
   {
-    "revision": "1c5a1f0c3646114081aad26923bcc0b4",
+    "revision": "32c6e8945071c45919824b8594ce8999",
     "url": "/WallPost/index.html"
   }
 ];
