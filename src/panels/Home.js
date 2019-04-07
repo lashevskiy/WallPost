@@ -27,18 +27,9 @@ const Home = ({ id, go, fetchedUser, handleClick, text, isShow, postId, isLoadin
 
 			<Group>
 				<Div>
-					{/*<Button size="xl" level="2" onClick={go} data-to="persik">*/}
-					{/*Show me the Persik, please*/}
-					{/*</Button>*/}
-
 					<Button size="xl" level="2" onClick={handleClick}>
 						Получить ответ на новый вопрос
 					</Button>
-
-					{/*{isShow &&*/}
-					{/*<Div><Div style={{ color: '#8e8e93', lineHeight: '1.5', }}>{text}</Div></Div>*/}
-					{/*}*/}
-					{/*{isLoading && <div>Loading...</div>}*/}
 				</Div>
                 {!isLoading && isShow &&
                 <Cell href={getUrl(postId)} target="_blank" expandable={true}

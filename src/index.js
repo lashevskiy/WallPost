@@ -6,9 +6,19 @@ import connect from '@vkontakte/vkui-connect';
 import App from './App';
 // import registerServiceWorker from './sw';
 
+connect.subscribe((e) => {
+    switch (e.detail.type) {
+        case 'VKWebAppUpdateConfig':
+            let schemeAttribute = document.createAttribute('scheme');
+            schemeAttribute.value = e.detail.data.scheme ? e.detail.data.scheme : 'client_light';
+            document.body.attributes.setNamedItem(schemeAttribute);
+            break;
+        default:
+    }
+});
+
 // Init VK App
 connect.send('VKWebAppInit', {});
-// connect.send("VKWebAppGetAuthToken", {"app_id": 6926844, "scope": "friends,status,groups,wall"});
 
 // Если вы хотите, чтобы ваше веб-приложение работало в оффлайне и загружалось быстрее,
 // расскомментируйте строку с registerServiceWorker();
